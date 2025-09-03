@@ -1,78 +1,307 @@
-/* ======= MARA FLORES DE BACH – THEME ======= */
-:root{
-  --mara-bg:        #faf3e0; /* fondo crema */
-  --mara-ink:       #3f3a34; /* texto gris cálido oscuro */
-  --mara-accent:    #7d9d72; /* verde natural suave */
-  --mara-accent-2:  #c5a880; /* beige/tierra para acentos */
-  --mara-accent-dk: #6a855f; /* hover verde */
-  --mara-card:      #ffffff; /* tarjetas/form */
-  --mara-border:    #e6dcc9; /* bordes suaves */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8F1E5; /* color de fondo */
+  color: #2f2f2f; /* color de texto principal */
 }
 
-html, body {
-  height: 100%;
-}
-body{
-  background: var(--mara-bg);
-  color: var(--mara-ink);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px; /* espacio lateral en móviles */
 }
 
-/* Navbar */
-.navbar-mara {
-  background: var(--mara-card);
-  border: 1px solid var(--mara-border);
-  border-radius: 12px;
+header, footer {
+  background-color: #C8B6E2; /* lavanda */
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+/* ===== Header / Navbar ===== */
+.encabezado{
+  background-color: #C8B6E2; /* lavanda */
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.encabezado .fila{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  position: relative; /* Para que el menú absoluto se ancle aquí en móvil */
 }
 
-/* Marca / logo */
-.brand-mara {
-  display:flex; align-items:center; gap:.6rem;
-  font-weight: 700; letter-spacing:.3px; color: var(--mara-ink);
+/* Logo */
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
 }
-.brand-mara img { width:28px; height:28px; }
+.logo img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+}
 
-/* Tarjeta del login */
-.login-card{
-  background: var(--mara-card);
-  border: 1px solid var(--mara-border);
+/* Botón hamburguesa (visible en móvil) */
+.btn-menu{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.btn-menu:focus{
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+.btn-menu .linea{
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Menú (cerrado por defecto en móvil) */
+.menu{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  display: none;     /* oculto por defecto */
+  background-color: #ffffff;
+  color: #2f2f2f;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.menu.abierto{ display: block; }
+
+.menu ul{
+  list-style: none;
+  margin: 0;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.menu a{
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #2f2f2f;
+  border-radius: 6px;
+}
+.menu a:hover{
+  background-color: #AED9C9; /* menta */
+  color: #ffffff;
+}
+.menu a.activo{
+  background-color: #AED9C9;
+  color: #ffffff;
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 768px){
+  .btn-menu{ display: none; }     /* en desktop desaparece la hamburguesa */
+  .menu{
+    position: static;
+    display: block;               /* menú siempre visible */
+    background: transparent;
+    color: #ffffff;
+    box-shadow: none;
+    margin-top: 0;
+  }
+  .menu ul{
+    flex-direction: row;
+    gap: 8px;
+    padding: 0;
+  }
+  .menu a{
+    color: #ffffff;
+    padding: 8px 10px;
+  }
+  .menu a:hover{
+    background-color: rgba(255,255,255,0.2);
+    color: #ffffff;
+  }
+  .menu a.activo{
+    background-color: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+}
+
+
+span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ===== HERO + CARRUSEL ===== */
+
+/* Sección hero (contiene carrusel e info) */
+.hero{
+  margin: 16px 0 12px;
+  position: relative;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  background-color: #C8B6E2; /* lavanda de base por si tarda la imagen */
 }
 
-/* Labels y controles */
-.etiqueta{
-  color: var(--mara-ink);
-  font-weight: 600;
-}
-.form-control, .form-select{
-  border-color: var(--mara-border);
-}
-.form-control:focus, .form-select:focus{
-  border-color: var(--mara-accent);
-  box-shadow: 0 0 0 .2rem rgba(125,157,114,.2);
+/* Carrusel */
+.carrusel{
+  position: relative;
+  width: 100%;
+  height: 320px;            /* alto base en móvil */
+  background: #000;         /* para evitar parpadeo en carga */
 }
 
-/* Botones coherentes con la marca */
-.btn-mara-primary{
-  background: var(--mara-accent);
-  color:#fff; border:none;
-}
-.btn-mara-primary:hover{ background: var(--mara-accent-dk); color:#fff; }
-
-.btn-mara-secondary{
-  background: var(--mara-accent-2);
-  color:#fff; border:none;
-}
-.btn-mara-secondary:hover{
-  background: #b08f6d; color:#fff;
+/* Lista y slides */
+.carrusel .slides{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
 }
 
-/* Checkbox alineado con la paleta */
-.form-check-input:checked{
-  background-color: var(--mara-accent);
-  border-color: var(--mara-accent);
+.carrusel .slide{
+  position: absolute;
+  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  opacity: 0;
+  transition: opacity .4s ease;
 }
 
-/* Espaciados suaves */
-.caja{ margin-bottom: 14px; }
+.carrusel .slide.activo{
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Imágenes del slide */
+.carrusel .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* recorta sin deformar */
+  display: block;
+}
+
+/* Controles (prev/next) */
+.carrusel .control{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(255,255,255,.85);
+  color: #2f2f2f;
+  font-size: 22px;
+  line-height: 42px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+
+.carrusel .control:hover{
+  background: #AED9C9;      /* menta */
+  color: #fff;
+}
+
+.carrusel .prev{ left: 10px; }
+.carrusel .next{ right: 10px; }
+
+/* Indicadores (puntos) */
+.carrusel .indicadores{
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carrusel .punto{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carrusel .punto.activo{
+  background: #ffffff;
+}
+
+/* Texto superpuesto del hero */
+.hero-texto{
+  position: absolute;
+  inset: auto 0 0 0;               /* pegado abajo sobre el carrusel */
+  background: linear-gradient( to top, rgba(0,0,0,.45), rgba(0,0,0,.05) );
+  color: #fff;
+  padding: 18px 16px;
+}
+
+.hero-texto h1{
+  margin: 0 0 6px;
+  font-size: clamp(20px, 4.8vw, 34px);
+}
+
+.hero-texto p{
+  margin: 0 0 10px;
+  font-size: clamp(13px, 3.4vw, 16px);
+}
+
+/* Botón primario del hero */
+.btn-primario{
+  display: inline-block;
+  background-color: #AED9C9; /* menta */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 6px 14px rgba(0,0,0,.15);
+}
+
+.btn-primario:hover{
+  background-color: #8fc8b8;
+}
+
+/* ===== Responsivo ===== */
+@media (min-width: 576px){
+  .carrusel{ height: 380px; }
+}
+
+@media (min-width: 768px){
+  .carrusel{ height: 440px; }
+  .hero-texto{
+    padding: 24px 22px;
+  }
+}
+
+@media (min-width: 992px){
+  .carrusel{ height: 300px; }
+  .hero-texto{
+    inset: 0;                           /* ocupa todo para centrar */
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: linear-gradient( to bottom, rgba(0,0,0,.30), rgba(0,0,0,.15) );
+    padding: 0 32px;
+  }
+  .hero-texto p{ max-width: 820px; }
+}

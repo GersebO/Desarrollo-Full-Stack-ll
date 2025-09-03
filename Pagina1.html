@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es" data-theme="natural">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preview Paletas – Marafloresdebach</title>
+  <style>
+    /* ========= PALLETES via CSS variables ========= */
+    /* Defaults (Natural) */
+    :root {
+      --bg: #F5E9D7;          /* beige cálido */
+      --surface: #ffffff;     /* blanco */
+      --brand: #A8C686;       /* verde salvia */
+      --accent: #E6B7C1;      /* rosa suave */
+      --text: #2b2b2b;        /* texto principal */
+      --muted: #6B6B6B;       /* texto secundario */
+      --shadow: 0 10px 20px rgba(0,0,0,.08);
+      --radius: 18px;
+    }
+
+    /* Tema 1: Natural (relajación + naturaleza) */
+    html[data-theme="natural"]{
+      --bg:#F5E9D7;
+      --surface:#ffffff;
+      --brand:#A8C686;
+      --accent:#E6B7C1;
+      --text:#2b2b2b;
+      --muted:#6B6B6B;
+    }
+
+    /* Tema 2: Spa/Relajación (lavanda + menta) */
+    html[data-theme="spa"]{
+      --bg:#F8F1E5;           /* arena clara */
+      --surface:#ffffff;
+      --brand:#C8B6E2;        /* lavanda */
+      --accent:#AED9C9;       /* verde menta */
+      --text:#2f2f2f;
+      --muted:#4A4A4A;
+    }
+
+    /* Tema 3: Energía positiva (turquesa + coral) */
+    html[data-theme="energia"]{
+      --bg:#FAFAFA;           /* blanco perla */
+      --surface:#ffffff;
+      --brand:#6EC1C2;        /* turquesa */
+      --accent:#F7A9A8;       /* coral suave */
+      --text:#232323;
+      --muted:#5A5A5A;
+    }
+
+    /* ========= Base Styles ========= */
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+    }
+    .container{width:min(1100px, 92%); margin-inline:auto}
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index:10;
+      background: color-mix(in srgb, var(--surface) 92%, var(--brand) 8%);
+      box-shadow: var(--shadow);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px;
+    }
+    .brand-badge{
+      width:40px; height:40px; border-radius:50%;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: inset 0 0 0 4px #ffffffb0;
+    }
+    .theme-switch{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .chip{
+      border:1px solid color-mix(in srgb, var(--brand) 60%, #000 0%);
+      background:#fff; color:var(--muted);
+      padding:8px 12px; border-radius:999px; cursor:pointer;
+      transition: transform .12s ease, background .2s ease;
+    }
+    .chip:hover{ transform: translateY(-1px) }
+    .chip.active{
+      background: var(--brand); color:#fff; border-color: transparent;
+    }
+
+    /* Hero */
+    .hero{
+      margin:22px 0 10px; border-radius: var(--radius);
+      min-height: 360px; display:grid; place-items:center; overflow:hidden;
+      background:
+        linear-gradient( to bottom right, color-mix(in srgb, var(--brand) 20%, transparent),
+                                       color-mix(in srgb, var(--accent) 18%, transparent) ),
+        url('https://images.unsplash.com/photo-1556228724-4c1b4e1fe10b?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+    .hero-inner{
+      width:100%; padding:48px 24px; text-align:center;
+      backdrop-filter: blur(1.2px);
+      color:#fff; text-shadow: 0 2px 14px rgba(0,0,0,.35);
+    }
+    .hero h1{ margin:0 0 8px; font-size: clamp(28px, 5vw, 44px); }
+    .hero p{ margin:0 auto; max-width:760px; font-size: clamp(14px, 2.4vw, 18px); }
+
+    .cta{
+      margin-top:18px; display:inline-block; text-decoration:none;
+      padding:12px 18px; border-radius:999px; font-weight:600;
+      background: var(--accent); color:#fff; box-shadow: var(--shadow);
+      border: 0; cursor:pointer;
+    }
+
+    /* Cards de Servicios */
+    .grid{
+      display:grid; gap:18px; grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 12; background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow:hidden;
+      display:flex; flex-direction:column;
+    }
+    .card img{ width:100%; height:190px; object-fit:cover }
+    .card-body{ padding:16px 16px 18px }
+    .tag{
+      display:inline-block; padding:4px 10px; border-radius:999px;
+      background: color-mix(in srgb, var(--brand) 16%, #fff);
+      color: color-mix(in srgb, var(--brand) 70%, #000);
+      font-size:12px; margin-bottom:8px;
+    }
+    .card h3{ margin:6px 0 8px; font-size:20px }
+    .card p{ margin:0; color:var(--muted); line-height:1.5 }
+    .btn{
+      margin-top:12px; padding:10px 14px; border-radius:12px; border:1px solid var(--brand);
+      color: var(--brand); background:#fff; cursor:pointer; font-weight:600;
+    }
+    .btn.primary{ background: var(--brand); color:#fff; border-color: transparent }
+
+    @media (min-width: 680px){
+      .card{ grid-column: span 6 }
+    }
+    @media (min-width: 980px){
+      .card{ grid-column: span 4 }
+    }
+
+    /* Footer */
+    footer{
+      margin:34px 0 10px; padding:24px; text-align:center;
+      color: var(--muted);
+    }
+
+    /* Pequeño panel de muestra de colores */
+    .swatches{ display:flex; gap:10px; justify-content:center; margin-top:12px }
+    .sw{ width:26px; height:26px; border-radius:6px; box-shadow: var(--shadow) }
+    .sw.bg{ background: var(--bg) }
+    .sw.brand{ background: var(--brand) }
+    .sw.accent{ background: var(--accent) }
+    .sw.surface{ background: var(--surface); border:1px solid #e7e7e7 }
+    .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:12px; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <div>Marafloresdebach</div>
+      </div>
+
+      <div class="theme-switch" role="group" aria-label="Cambiar paleta">
+        <button class="chip active" data-theme="natural">🌿 Natural</button>
+        <button class="chip" data-theme="spa">🌸 Spa/Relajación</button>
+        <button class="chip" data-theme="energia">☀️ Energía</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Bienestar con masoterapia y flores de Bach</h1>
+        <p>Relaja, recupera y equilibra tu energía. Cuidado profesional con foco en tu salud integral.</p>
+        <a href="#servicios" class="cta">Ver servicios</a>
+
+        <div class="swatches" aria-hidden="true" title="Muestras de color">
+          <div class="sw bg"></div>
+          <div class="sw surface"></div>
+          <div class="sw brand"></div>
+          <div class="sw accent"></div>
+        </div>
+        <div class="kbd">Tip: cambia la paleta con los chips de arriba</div>
+      </div>
+    </section>
+
+    <section id="servicios" style="margin-top:22px">
+      <div class="grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1400&auto=format&fit=crop" alt="Masaje de relajación" />
+          <div class="card-body">
+            <span class="tag">Relajación</span>
+            <h3>Masaje de Relajación</h3>
+            <p>Reduce estrés y ansiedad con maniobras suaves que activan la circulación y promueven descanso profundo.</p>
+            <button class="btn primary">Reservar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd5a?q=80&w=1400&auto=format&fit=crop" alt="Masaje descontracturante" />
+          <div class="card-body">
+            <span class="tag">Descontracturante</span>
+            <h3>Masaje Descontracturante</h3>
+            <p>Enfocado en aliviar puntos de tensión muscular y mejorar la movilidad con técnicas profundas.</p>
+            <button class="btn">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1400&auto=format&fit=crop" alt="Flores de Bach" />
+          <div class="card-body">
+            <span class="tag">Flores de Bach</span>
+            <h3>Terapia Floral</h3>
+            <p>Apoyo emocional personalizado con esencias florales. Complemento ideal para tu proceso de bienestar.</p>
+            <button class="btn">Saber más</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Marafloresdebach · Bienestar integral
+  </footer>
+
+  <script>
+    // Toggle de paletas
+    const chips = document.querySelectorAll('.chip');
+    const html = document.documentElement;
+    chips.forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const theme = chip.dataset.theme;
+        html.setAttribute('data-theme', theme);
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+      });
+    });
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
