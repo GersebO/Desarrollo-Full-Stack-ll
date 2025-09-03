@@ -1,0 +1,78 @@
+/* ======= MARA FLORES DE BACH – THEME ======= */
+:root{
+  --mara-bg:        #faf3e0; /* fondo crema */
+  --mara-ink:       #3f3a34; /* texto gris cálido oscuro */
+  --mara-accent:    #7d9d72; /* verde natural suave */
+  --mara-accent-2:  #c5a880; /* beige/tierra para acentos */
+  --mara-accent-dk: #6a855f; /* hover verde */
+  --mara-card:      #ffffff; /* tarjetas/form */
+  --mara-border:    #e6dcc9; /* bordes suaves */
+}
+
+html, body {
+  height: 100%;
+}
+body{
+  background: var(--mara-bg);
+  color: var(--mara-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-mara {
+  background: var(--mara-card);
+  border: 1px solid var(--mara-border);
+  border-radius: 12px;
+}
+
+/* Marca / logo */
+.brand-mara {
+  display:flex; align-items:center; gap:.6rem;
+  font-weight: 700; letter-spacing:.3px; color: var(--mara-ink);
+}
+.brand-mara img { width:28px; height:28px; }
+
+/* Tarjeta del login */
+.login-card{
+  background: var(--mara-card);
+  border: 1px solid var(--mara-border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+/* Labels y controles */
+.etiqueta{
+  color: var(--mara-ink);
+  font-weight: 600;
+}
+.form-control, .form-select{
+  border-color: var(--mara-border);
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--mara-accent);
+  box-shadow: 0 0 0 .2rem rgba(125,157,114,.2);
+}
+
+/* Botones coherentes con la marca */
+.btn-mara-primary{
+  background: var(--mara-accent);
+  color:#fff; border:none;
+}
+.btn-mara-primary:hover{ background: var(--mara-accent-dk); color:#fff; }
+
+.btn-mara-secondary{
+  background: var(--mara-accent-2);
+  color:#fff; border:none;
+}
+.btn-mara-secondary:hover{
+  background: #b08f6d; color:#fff;
+}
+
+/* Checkbox alineado con la paleta */
+.form-check-input:checked{
+  background-color: var(--mara-accent);
+  border-color: var(--mara-accent);
+}
+
+/* Espaciados suaves */
+.caja{ margin-bottom: 14px; }
