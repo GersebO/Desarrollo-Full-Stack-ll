@@ -6,7 +6,7 @@ body {
 }
 .navbar {
   background-color: #ffffff !important; /* blanco puro */
-  border-bottom: none; /* quitamos la línea */
+  border-bottom: none; /* esto es para quitar la linea */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* sombra ligera */
 }
 .navbar-brand span {
@@ -137,7 +137,7 @@ a{
   transform: scale(1.05);
 }
 
-/* Botón activo (ejemplo para Energía) */
+/* Botón activo  */
 .category-btn.active {
   background-color: #6bc1c1;
   color: white;
@@ -156,7 +156,7 @@ body, p, .card-text, .category-btn {
 
 .product-price{
   font-weight: 700;
-  color: #0b6b6b;      /* hace juego con tu paleta */
+  color: #0b6b6b;      
   margin: 6px 0 10px;
   font-size: 1rem;
 }
@@ -174,7 +174,9 @@ body, p, .card-text, .category-btn {
   padding:4px 10px; border-radius:12px; margin-bottom:10px; color:#fff;
   background:#7c6cf5;            /* color para “Flores de Bach” */
 }
+
 .flores .category-btn{ background:#7c6cf5; color:#fff; }
+
 .flores .category-btn:hover{ background:#5f4de0; color:#fff; }
 
 /* === FOOTER === */
@@ -202,7 +204,7 @@ body, p, .card-text, .category-btn {
 
 .site-footer .footer-links a {
   font-size: 14px;
-  color: #0b6b6b;   /* combina con los precios */
+  color: #0b6b6b;   
   text-decoration: none;
   margin: 0 6px;
   transition: color 0.3s ease;
@@ -275,7 +277,7 @@ h1, h2, h3, h4, .card-title {
 
 
 .card-title {
-  color: #947f6c;       /* color que me diste */
-  font-weight: 600;     /* mantiene jerarquía */
-  margin-bottom: 12px;  /* espacio con el texto */
+  color: #947f6c;     
+  font-weight: 600;    
+  margin-bottom: 12px; 
 }
