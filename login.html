@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR (la misma que ya usas) -->
+  <nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-top:25px;">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="Home.html">
+        <img src="img/logo.png" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
+        <span>Marafloresdebach</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menucollapse">
+        <img src="img/logo.png" alt="Menu" style="width:30px;height:30px;">
+      </button>
+
+      <div class="collapse navbar-collapse" id="menucollapse">
+        <ul class="navbar-nav ms-auto">
+          <div class="theme-switch" role="group" aria-label="Navegación">
+            <a href="Productos.html" class="category-btn" role="button">🌿Productos</a>
+            <a href="Home.html" class="category-btn" role="button">🏠Home</a>
+            <a href="Nosotros.html" class="category-btn" role="button">🌸Nosotros</a>
+            <a href="Contacto.html" class="category-btn" role="button">☀️Contacto</a>
+            <a href="Blogs.html" class="category-btn" role="button">🔏Blogs</a>
+            <a href="carrito.html" class="category-btn">🛒 <span class="cart-count">0</span></a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO corto (opcional, mismo look que tu Home) -->
+  <section class="hero" aria-labelledby="loginTitle" style="margin-top:25px;">
+    <div class="container text-center">
+      <h1 id="loginTitle" class="hero-title">Inicia sesión</h1>
+      <p class="hero-subtitle">Accede para agendar y revisar tus servicios.</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO LOGIN (centrado) -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-8 col-lg-5">
+        <div class="formulario-fondo p-4 rounded">
+          <form id="loginForm" novalidate>
+            <!-- Correo -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" name="email"
+                     placeholder="tu@correo.com" required>
+              <div class="invalid-feedback">Ingresa un correo válido.</div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password"
+                     placeholder="Mínimo 6 caracteres" minlength="6" required>
+              <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+            </div>
+
+            <!-- Recordarme (opcional) -->
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember">Recordarme</label>
+            </div>
+
+            <button type="submit" class="category-btn w-100">Ingresar</button>
+
+            <p class="text-center mt-3 mb-0">
+              ¿No tienes cuenta? <a href="Registro.html">Crear cuenta</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER (el mismo de tu sitio) -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="footer-title">MarafloresdeBach</p>
+      <p class="footer-info">© 2025 Todos los derechos reservados</p>
+      <p class="footer-links">
+        <a href="Nosotros.html">Nosotros</a> |
+        <a href="Contacto.html">Contacto</a> |
+        <a href="Productos.html">Productos</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
