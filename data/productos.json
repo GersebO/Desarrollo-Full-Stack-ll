@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Masaje Deportivo",
+    "precio": 25000,
+    "imagen": "img/MasajeDeportivo.png",
+    "descripcion": "Diseñado para deportistas y personas activas. Ayuda a preparar los músculos antes de la actividad física o a recuperarlos después, previniendo lesiones y mejorando el rendimiento."
+  },
+  {
+    "id": 2,
+    "nombre": "Masaje Terapéutico",
+    "precio": 30000,
+    "imagen": "img/MasajeTerapeutico.png",
+    "descripcion": "Un enfoque profesional para tratar dolencias específicas. Con técnicas avanzadas, este masaje ayuda a aliviar el dolor crónico, mejorar la postura y acelerar la recuperación."
+  },
+  {
+    "id": 3,
+    "nombre": "Masaje de Relajación",
+    "precio": 15000,
+    "imagen": "img/MasajeRelajacion.png",
+    "descripcion": "Libera el estrés acumulado y calma tu mente. Este masaje utiliza movimientos suaves y fluidos para aliviar la tensión muscular."
+  },
+  {
+    "id": 4,
+    "nombre": "Masaje Descontracturante",
+    "precio": 10000,
+    "imagen": "img/MasajeDescontracturante.png",
+    "descripcion": "Se enfoca en liberar la tensión en áreas específicas como espalda, cuello y hombros."
+  },
+  {
+    "id": 5,
+    "nombre": "Rescue Remedy",
+    "precio": 15000,
+    "imagen": "img/flores-rescue.png",
+    "descripcion": "Fórmula de rescate para momentos de estrés, nerviosismo o crisis emocionales."
+  }
+]
