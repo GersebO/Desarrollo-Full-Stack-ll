@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ejemplo</title>
+    <title>Mara Flores de Bach</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    
+</head>
 <body>
     <div class="container">
         
+        <!-- NAVBAR -->
         <nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-top: 25px;">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="img/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 rounded-circle">
                     <span>Marafloresdebach</span>
                 </a>
-                <!--botón hamburguesa-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menucollapse">
-                 <!--<span class="navbar-toggler-icon"></span>-->
                   <img src="img/logo.png" alt="Menu" style="width: 30px; height: 30px;">
                 </button>
-                
 
                 <div class="collapse navbar-collapse" id="menucollapse">
                     <ul class="navbar-nav ms-auto">
                         <div class="theme-switch" role="group" aria-label="Cambiar paleta">
-
                             <a href="Productos.html" class="category-btn active" role="button">🌿Productos</a>
                             <a href="Home.html" class="category-btn" role="button">🏠Home</a>
                             <a href="Nosotros.html" class="category-btn" role="button">🌸Nosotros</a>
@@ -41,6 +38,7 @@
                 </div>
             </div>
         </nav>
+
         <!-- HERO -->
         <section class="hero" aria-labelledby="heroTitle" style="margin-top:25px;">
             <div class="container text-center">
@@ -54,126 +52,33 @@
             </div>
         </section>
 
-        <!--cards-->
-        <div class="row" style="margin-top:15px">
-            <div class="col-md-3 mb-5">
-                <div class="card">
-                    <img class="card-img-top" src="img/MasajeDeportivo.png" alt="card1">
-                    <div class="card-body text-center">
-                      <h4 class="card-title">Masaje Deportivo</h4>
-                      <div class="price-ribbon">$25.000</div>
-                      <p class="card-text">Diseñado para deportistas y personas activas. Ayuda a preparar los músculos antes de la actividad física o a recuperarlos después, previniendo lesiones y mejorando el rendimiento. Mantiene tu cuerpo en óptimas condiciones.</p>
-                      <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                </div>
+        <!-- 🟢 CONTENEDOR DE PRODUCTOS -->
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div id="productos-container" class="row g-4">
+                <!-- Aquí se insertarán las tarjetas dinámicamente -->
             </div>
-
-            <div class="col-md-3 mb-5">
-                <div class="card">
-                    <img class="card-img-top" src="img/MasajeTerapeutico.png" alt="card1">
-                    <div class="card-body text-center ">
-                      <h4 class="card-title">Masaje Terapéutico</h4>
-                      <div class="price-ribbon">$30.000</div>
-                      <p class="card-text">Un enfoque profesional para tratar dolencias específicas. Con técnicas avanzadas, este masaje ayuda a aliviar el dolor crónico, mejorar la postura y acelerar la recuperación de lesiones, siempre bajo un enfoque clínico y seguro.</p>
-                      <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-md-3 mb-5">
-                <div class="card">
-                    <img class="card-img-top" src="img/MasajeRelajacion.png" alt="card1">
-                    <div class="card-body text-center">
-                      <h4 class="card-title">Masaje de Relajación</h4>
-                      <div class="price-ribbon">$15.000</div>
-                      <p class="card-text">Libera el estrés acumulado y calma tu mente. Este masaje utiliza movimientos suaves y fluidos para aliviar la tensión muscular, promoviendo una profunda sensación de bienestar y tranquilidad. Ideal para desconectar del día a día.</p>
-                      <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-md-3 mb-5">
-                <div class="card">
-                    <img class="card-img-top" src="img/MasajeDescontracturante.png" alt="card1">
-                    <div class="card-body text-center">
-                      <h4 class="card-title">Masajes Descontracturantes</h4>
-                      <div class="price-ribbon">$10.000</div>
-                      <p class="card-text">¿Sientes nudos y rigidez? Este masaje se enfoca en liberar la tensión en áreas específicas como espalda, cuello y hombros. Utilizando presión media a fuerte, ayuda a deshacer contracturas y recuperar la movilidad.</p>
-                       <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                  </div>
-            </div>
-
-            <!--cards flores de bach-->
-            <div class="col-md-3 mb-5" data-category="flores">
-                <div class="card h-100">
-                    <img class="card-img-top" src="img/flores-rescue.png" alt="Rescue Remedy">
-                    <div class="card-body text-center">
-                            <h4 class="card-title">Rescue Remedy</h4>
-                            <div class="price-ribbon">$15.000</div>
-                            <p class="card-text">Fórmula de rescate para momentos de estrés, nerviosismo o crisis emocionales.</p>
-                        <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-3 mb-5" data-category="flores">
-                <div class="card h-100">
-                    <img class="card-img-top" src="img/flores-mimulus.png" alt="Mimulus">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Mimulus</h4>
-                            <div class="price-ribbon">$13.000</div>
-                            <p class="card-text">Para miedos conocidos (exámenes, hablar en público, procedimientos médicos).</p>
-                        <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-5" data-category="flores">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/White Chestnut.png" alt="White Chestnut">
-                <div class="card-body text-center">
-                    <h4 class="card-title">White Chestnut</h4>
-                        <div class="price-ribbon">$14.000</div>
-                        <p class="card-text">Para pensamientos recurrentes que no dejan descansar; ayuda a calmar la mente.</p>
-                    <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                </div>
-            </div>
-            </div>
-            
-            <div class="col-md-3 mb-5" data-category="flores">
-                <div class="card h-100">
-                    <img class="card-img-top" src="img/flores-larch.png" alt="Larch">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Larch</h4>
-                            <div class="price-ribbon">$15.000</div>
-                            <p class="card-text">Para falta de confianza y autovaloración; fomenta la seguridad personal.</p>
-                        <a href="contacto.html" class="category-btn" role="button">Agenda Aquí</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-        
         </div>
 
     </div>
     
     <!-- FOOTER -->
     <footer class="site-footer">
-    <div class="container text-center">
-        <p class="footer-title">MarafloresdeBach</p>
-        <p class="footer-info">© 2025 Todos los derechos reservados</p>
-        <p class="footer-links">
-        <a href="nosotros.html">Nosotros</a> | 
-        <a href="contacto.html">Contacto</a> | 
-        <a href="productos.html">Productos</a>
-        </p>
-    </div>
+        <div class="container text-center">
+            <p class="footer-title">MarafloresdeBach</p>
+            <p class="footer-info">© 2025 Todos los derechos reservados</p>
+            <p class="footer-links">
+                <a href="nosotros.html">Nosotros</a> | 
+                <a href="contacto.html">Contacto</a> | 
+                <a href="productos.html">Productos</a>
+            </p>
+        </div>
     </footer>
     
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    
+    <!-- 🟢 Script del carrito -->
+    <script src="./js/carrito.js"></script>
 </body>
 </html>
